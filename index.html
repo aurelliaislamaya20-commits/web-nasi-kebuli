@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Nasi Kebuli Babadola Jember 🍛</title>
+  <link rel="icon" type="image/png" href="537463579_18521864815002393_2786672968626679805_n-removebg-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Nasi Kebuli Babadola Jember — nasi kebuli rempah Timur Tengah yang gurih dan bikin nagih. Buka setiap hari jam 17.20 - habis.">
+  <meta name="keywords" content="nasi kebuli, babadola, kuliner jember, gofood jember, nasi timur tengah">
+  <meta property="og:image" content="gerobak.png">
+
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    html,body {scroll-behavior:smooth;transition:background .5s,color .5s;}
+    body {background:linear-gradient(135deg,#fffbe6,#fff3c6);color:#333;}
+
+    /* 🌟 DARK MODE */
+    body.dark {background:#1b1b1b;color:#f5f5f5;}
+    body.dark nav, body.dark footer {background:linear-gradient(90deg,#222,#444,#666);}
+    body.dark .menu-item, body.dark .order-form, body.dark .ulasan-form {background:#2a2a2a;color:#eee;}
+
+    /* 🌟 NAVBAR */
+    nav{
+      background:linear-gradient(90deg,#7a1f00,#f9a825,#ffcc33);
+      animation:gradientMove 6s ease infinite;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:12px 20px;position:sticky;top:0;z-index:1000;color:#fff;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
+    @keyframes gradientMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    nav .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;}
+    nav .logo img{height:42px;width:42px;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 2px 6px rgba(0,0,0,0.3);}
+    nav ul{list-style:none;display:flex;gap:20px;}
+    nav ul li a{color:white;text-decoration:none;font-weight:600;transition:.3s;}
+    nav ul li a:hover{color:#ffefba;text-shadow:0 0 10px #fff;}
+    .dark-toggle{cursor:pointer;font-size:22px;margin-left:10px;}
+
+    /* mobile menu */
+    .hamburger{display:none;font-size:30px;cursor:pointer;user-select:none;}
+    @media(max-width:768px){
+      .hamburger{display:block;}
+      nav ul{
+        display:flex;flex-direction:column;
+        background:#7a1f00;position:fixed;top:0;right:-250px;width:220px;
+        height:100vh;padding-top:80px;transition:right .4s ease;
+      }
+      nav ul.show{right:0;}
+      nav ul li{text-align:center;margin-bottom:25px;}
+    }
+
+    /* 🌟 HERO */
+    .hero{
+      min-height:90vh;background:url('gerobak.png') center/cover no-repeat;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;color:white;position:relative;padding:0 20px;
+    }
+    .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);}
+    .hero>*{position:relative;z-index:2;animation:fadeUp 1s ease forwards;}
+    .hero h1{
+      font-size:52px;font-weight:800;
+      background:linear-gradient(90deg,#ffcc33,#ffb300);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      text-shadow:3px 3px 8px rgba(0,0,0,0.6);margin-bottom:10px;
+    }
+    .hero p{font-size:20px;color:#fff8e1;max-width:600px;margin-bottom:15px;}
+    .jam-buka{
+      background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);
+      border:1px solid rgba(255,255,255,0.3);
+      padding:10px 20px;border-radius:25px;font-weight:600;color:#ffe082;margin-bottom:20px;
+    }
+    .btn{display:inline-block;background:linear-gradient(90deg,#ffb300,#ff6f00);color:white;
+      padding:13px 32px;border-radius:40px;font-weight:600;text-decoration:none;transition:.3s;box-shadow:0 5px 15px rgba(0,0,0,0.4);}
+    .btn:hover{transform:scale(1.07);box-shadow:0 8px 20px rgba(0,0,0,0.5);}
+    .btn-group{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+    .gofood-btn{background:#d8232a;display:flex;align-items:center;gap:10px;}
+    .gofood-btn img{width:26px;height:26px;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+    @media(max-width:480px){.hero h1{font-size:38px;}.hero p{font-size:17px;}}
+
+    /* 🌟 SECTION */
+    section{padding:80px 25px;text-align:center;opacity:0;transform:translateY(40px);transition:all 1s ease;}
+    section.visible{opacity:1;transform:translateY(0);}
+    h2{font-size:32px;color:#b34700;margin-bottom:10px;}
+    h2::after{content:"";display:block;width:100px;height:4px;background:linear-gradient(90deg,#ff8f00,#ffd54f);margin:10px auto 25px;border-radius:2px;}
+
+    /* 🌟 MENU */
+    .menu-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:25px;justify-items:center;margin-top:30px;}
+    .menu-item{background:white;border-radius:20px;width:250px;padding:18px;box-shadow:0 6px 15px rgba(0,0,0,0.15);transition:.3s;overflow:hidden;}
+    .menu-item:hover{transform:translateY(-8px) scale(1.04);box-shadow:0 15px 30px rgba(255,165,0,0.4);}
+    .menu-item img{width:100%;height:180px;object-fit:cover;border-radius:15px;margin-bottom:12px;}
+    .menu-item h3{color:#b34700;font-size:19px;margin-bottom:5px;}
+    .price{font-weight:700;color:#ff6f00;font-size:17px;}
+    .note{margin-top:20px;font-style:italic;color:#555;}
+
+    /* 🌟 FORM PESAN */
+    .order-form{background:white;padding:20px;max-width:400px;margin:30px auto 0;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.15);text-align:left;}
+    .order-form input,.order-form select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;}
+    .order-form button{background:linear-gradient(90deg,#ffb300,#ff6f00);color:white;border:none;padding:10px;border-radius:8px;width:100%;font-weight:600;cursor:pointer;}
+    .order-info{font-size:13px;color:#555;margin-top:8px;text-align:center;}
+    /* 📝 Catatan Tambahan */
+#catatan {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 14px;
+  border: 2px solid #f2a154; /* warna oranye lembut */
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff8f0;
+  color: #3a2e1f;
+  resize: vertical; /* biar bisa diubah tinggi manual */
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#catatan:focus {
+  outline: none;
+  border-color: #e77c40; /* oranye lebih gelap saat fokus */
+  box-shadow: 0 0 8px rgba(231, 124, 64, 0.4);
+  background-color: #fffdf9;
+}
+
+/* Label-nya */
+.order-form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #4b2e05;
+}
+
+/* Responsif di HP */
+@media (max-width: 600px) {
+  #catatan {
+    font-size: 14px;
+    min-height: 70px;
+  }
+}
+
+    /* 🌟 ULASAN */
+    #ulasan{background:#fff8e1;}
+    .ulasan-form{max-width:500px;margin:0 auto 30px;background:white;padding:20px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    .ulasan-form input,.ulasan-form textarea{width:100%;padding:10px;margin-bottom:12px;border:1px solid #ccc;border-radius:8px;}
+    .ulasan-list{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+    .ulasan-item{background:white;padding:15px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.1);text-align:left;animation:fadeUp .5s;}
+    .ulasan-item h4{color:#b34700;font-size:17px;margin-bottom:4px;}
+    .ulasan-item small{color:#999;font-size:13px;}
+
+    /* 🌟 FOOTER & WA */
+    iframe{width:100%;height:400px;border:none;border-radius:15px;margin-top:25px;box-shadow:0 6px 15px rgba(255,153,0,0.3);}
+    footer{background:linear-gradient(90deg,#7a1f00,#ff8f00,#ffd54f);color:white;padding:25px 10px;text-align:center;line-height:1.7;font-size:15px;}
+    footer a{color:#fff8e1;text-decoration:none;font-weight:600;}
+    .wa-float{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;padding:13px 17px;border-radius:50px;font-weight:600;display:flex;align-items:center;gap:10px;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,0.4);transition:.3s;z-index:2000;}
+    .wa-float img{width:26px;height:26px;}
+    .wa-float:hover{transform:scale(1.05);background:#1ebe5d;}
+
+    /* 🌟 CTA Bottom */
+    .cta-bottom{display:none;}
+    @media(max-width:768px){
+      .cta-bottom{display:block;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(90deg,#ffb300,#ff6f00);text-align:center;padding:14px;z-index:1500;}
+      .cta-bottom a{color:white;font-size:18px;font-weight:700;text-decoration:none;}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><img src="icon.png" alt="Logo Babadola"> Nasi Kebuli Babadola</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul id="navLinks">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#order">Pesan</a></li>
+      <li><a href="#lokasi">Lokasi</a></li>
+      <li><a href="#ulasan">Ulasan</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><span class="dark-toggle" onclick="toggleDark()">🌙</span></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Nasi Kebuli Babadola</h1>
+    <p>Dari rempah Timur Tengah ke dapur Nusantara 🌿 — rasa gurihnya bikin nagih!</p>
+    <div class="jam-buka">🕒 Buka Setiap Hari: 17.20 - Habis</div>
+    <div class="btn-group">
+      <a href="#order" class="btn">📲 Pesan Sekarang</a>
+      <a href="https://gofood.co.id/id/jember/restaurant/nasi-goreng-kebuli-babadola-kpri-unej-jl-sumatra-no-101a-e3eabd25-045b-4274-92e0-a01ec3a6751e" target="_blank" class="btn gofood-btn"><img src="go.png!a"> GoFood</a>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2>Menu Makanan 🍽️</h2>
+    <div class="menu-card">
+      <div class="menu-item"><img src="15.png" alt=""><h3>Ayam Suwir + Telor</h3><p class="price">Rp 15.000</p></div>
+      <div class="menu-item"><img src="20.png" alt=""><h3>Full Topping (Ayam + Telor + Sosis)</h3><p class="price">Rp 20.000</p></div>
+      <div class="menu-item"><img src="30.png" alt=""><h3>Kebuli Spesial Jumbo</h3><p class="price">Rp 30.000</p></div>
+    </div>
+    <p class="note">🌶️ Level Pedas: Tidak Pedas | Sedang | Pedas | Pedas Banget</p>
+  </section>
+
+  <section id="order">
+  <h2>Pesan via WhatsApp 📲</h2>
+  <div class="order-form">
+    <label>Atas Nama :</label>
+    <input id="atasNama" placeholder="Nama pemesan">
+
+    <label>Pilihan Pesanan :</label>
+    <select id="pesanan">
+      <option>Ayam Suwir + Telor</option>
+      <option>Full Topping (Ayam + Telor + Sosis)</option>
+      <option>Kebuli Spesial Jumbo</option>
+    </select>
+
+    <label>Diambil Jam :</label>
+    <input type="time" id="jamAmbil">
+
+    <label>Catatan Tambahan :</label>
+    <textarea id="catatan"></textarea>
+
+    <button onclick="pesanWA()">Kirim Pesanan via WhatsApp</button>
+
+    <div class="order-info">
+      * Jika chat tidak dibalas berarti sedang ramai orderan.<br>
+      💡 Saran: pesan sebelum jam 16.00
+    </div>
+  </div>
+</section>
+
+    <section id="lokasi">
+    <h2>Lokasi Kami 📍</h2>
+    <iframe src="https://www.google.com/maps?q=Jl.+Sumatra+No.105,+Tegal+Boto+Lor,+Sumbersari,+Kabupaten+Jember,+Jawa+Timur+68121&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+
+  <section id="ulasan">
+    <h2>Ulasan Pelanggan 📝</h2>
+    <div class="ulasan-form">
+      <input id="namaUlasan" placeholder="Nama Anda">
+      <textarea id="isiUlasan" rows="3" placeholder="Tulis ulasan Anda..."></textarea>
+      <button onclick="kirimUlasan()">Kirim Ulasan</button>
+    </div>
+    <div id="daftarUlasan" class="ulasan-list"></div>
+  </section>
+
+  <footer id="kontak">
+    © 2025 <b>Nasi Kebuli Babadola Jember</b><br>
+    Instagram <a href="https://www.instagram.com/nasgorkebuli_babadola" target="_blank">@nasikebuli_babadola</a> |
+    TikTok <a href="https://www.tiktok.com/@babadola_kebuli" target="_blank">@babadola_kebuli</a><br>
+    🛵 <img src="go.png!a" width="20"> <a href="https://gofood.co.id/id/jember/restaurant/nasi-goreng-kebuli-babadola..." target="_blank">GoFood Jember</a>
+  </footer>
+
+  <a href="https://wa.me/+62 877-3882-6165?text=Halo%20Nasi%20Kebuli%20Babadola!" class="wa-float" target="_blank"><img src="wa.png"> Chat via WA</a>
+  <div class="cta-bottom"><a href="https://wa.me/6285604735652?text=Halo%20Nasi%20Kebuli%20Babadola!">📲 Pesan Sekarang</a></div>
+
+  <script>
+    const sections=document.querySelectorAll("section");
+    window.addEventListener("scroll",()=>sections.forEach(s=>{if(s.getBoundingClientRect().top<innerHeight-100)s.classList.add("visible")}));
+    function toggleMenu(){document.getElementById("navLinks").classList.toggle("show");}
+    function pesanWA(){
+      const n=document.getElementById('atasNama').value,p=document.getElementById('pesanan').value,j=document.getElementById('jamAmbil').value;
+      if(!n||!j){alert('Isi nama & jam ambil!');return;}
+      localStorage.setItem('namaPemesan',n);
+      window.open(`https://wa.me/6287738826165?text=Halo%20Nasi%20Kebuli%20Babadola!%0ASaya%20*${n}*%20ingin%20pesan:%0A🍽️%20${p}%0A🕒%20Jam%20ambil:%20${j}`,'_blank');
+    }
+    function pesanWA() {
+    const nama = document.getElementById('atasNama').value.trim();
+    const pesanan = document.getElementById('pesanan').value;
+    const jam = document.getElementById('jamAmbil').value;
+    const catatan = document.getElementById('catatan').value.trim();
+
+    if (!nama || !jam) {
+      alert('Mohon isi nama dan jam pengambilan!');
+      return;
+    }
+
+    const pesan = `Halo, saya ${nama}.%0A
+Saya ingin pesan:%0A🍛 ${pesanan}%0A
+⏰ Diambil jam: ${jam}%0A
+📝 Catatan: ${catatan || '-'}%0A
+Terima kasih 🙏`;
+
+    const waURL = `https://wa.me/6287738826165?text=${pesan}`;
+    window.open(waURL, '_blank');
+  }
+    window.onload=()=>{const n=localStorage.getItem('namaPemesan');if(n)document.getElementById('atasNama').value=n;tampilkanUlasan();}
+    function kirimUlasan(){
+      const n=document.getElementById('namaUlasan').value,i=document.getElementById('isiUlasan').value;
+      if(!n||!i)return alert('Isi nama dan ulasan!');
+      const d={nama:n,isi:i,waktu:new Date().toLocaleString('id-ID')};
+      const u=JSON.parse(localStorage.getItem('ulasan')||'[]');u.unshift(d);localStorage.setItem('ulasan',JSON.stringify(u));
+      tampilkanUlasan();document.getElementById('namaUlasan').value='';document.getElementById('isiUlasan').value='';
+    }
+    function tampilkanUlasan(){
+      const c=document.getElementById('daftarUlasan'),u=JSON.parse(localStorage.getItem('ulasan')||'[]');
+      c.innerHTML=u.map(x=>`<div class="ulasan-item"><h4>${x.nama}</h4><p>${x.isi}</p><small>${x.waktu}</small></div>`).join('');
+    }
+    function toggleDark(){document.body.classList.toggle('dark');}
+  </script>
+</body>
+</html>
