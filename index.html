@@ -19,37 +19,98 @@
     @keyframes glow{0%{box-shadow:0 0 10px rgba(255,215,0,0.3);}50%{box-shadow:0 0 25px rgba(255,215,0,0.6);}100%{box-shadow:0 0 10px rgba(255,215,0,0.3);}}
 
     /* 🕌 Navbar */
-    nav{
-      background:linear-gradient(90deg,#4a0f00,#7b2d00,#b8860b);
-      display:flex;justify-content:space-between;align-items:center;
-      padding:10px 18px;position:sticky;top:0;z-index:1000;color:#fff;
-      box-shadow:0 4px 15px rgba(0,0,0,0.4);
-      animation:fadeUp .6s ease-in-out;
-    }
-    nav .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;font-family:'Amiri',serif;}
-    nav .logo img{height:40px;width:40px;border-radius:50%;background:#fff;object-fit:cover;}
-    nav ul{list-style:none;display:flex;gap:22px;}
-    nav ul li a{color:white;text-decoration:none;font-weight:600;transition:.3s;}
-    nav ul li a:hover{color:#ffeb99;text-shadow:0 0 10px #fff;}
-    .hamburger{display:none;font-size:30px;cursor:pointer;}
-
-    /* Sembunyikan tombol Tutup di tampilan besar */
-nav ul .close-btn {
-  display: none;
+    nav {
+  background: linear-gradient(90deg,#4a0f00,#7b2d00,#b8860b);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
-/* Tampilkan tombol Tutup hanya di tampilan HP */
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Amiri', serif;
+}
+
+nav .logo img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  transition: all .4s ease-in-out;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+nav ul li a:hover {
+  color: #ffeb99;
+  text-shadow: 0 0 10px #fff;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+/* 📱 Mobile Version */
 @media (max-width: 768px) {
-  nav ul .close-btn {
-    display: inline-block;
-    color: #ffeb99;
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 25px;
-    text-decoration: none;
+  .hamburger {
+    display: block;
+    z-index: 1100;
   }
-  nav ul .close-btn:hover {
-    color: #fff;
+
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background: rgba(60,20,0,0.9);
+    backdrop-filter: blur(8px);
+    transition: right .4s ease-in-out;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.4);
+  }
+
+  nav ul.show {
+    right: 0;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* animasi icon hamburger jadi X */
+  .hamburger.active {
+    transform: rotate(90deg);
   }
 }
 
@@ -178,11 +239,10 @@ nav ul .close-btn {
   <nav>
   <div class="logo">
     <img src="icon.png" alt="Logo Babadola"> 
-    <span>Babadola</span>
+    <span><b>Babadola</b><span style="color:#ffeb99;"></span></span>
   </div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">☰</div>
   <ul id="navLinks">
-    <li><a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">✕ Tutup</a></li>
     <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
     <li><a href="#order" onclick="toggleMenu()">Pesan</a></li>
     <li><a href="#lokasi" onclick="toggleMenu()">Lokasi</a></li>
@@ -265,7 +325,20 @@ nav ul .close-btn {
   </footer>
 
   <script>
-    function toggleMenu(){document.getElementById("navLinks").classList.toggle("show");}
+    function toggleMenu() {
+  const navLinks = document.getElementById("navLinks");
+  const hamburger = document.getElementById("hamburger");
+
+  navLinks.classList.toggle("show");
+  hamburger.classList.toggle("active");
+
+  // ganti ikon menu
+  if (hamburger.classList.contains("active")) {
+    hamburger.innerHTML = "✕";
+  } else {
+    hamburger.innerHTML = "☰";
+  }
+}
     function pesanWA(){
       const n=document.getElementById('atasNama').value.trim();
       const p=document.getElementById('pesanan').value;
