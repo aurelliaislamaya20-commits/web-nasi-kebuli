@@ -1,353 +1,364 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <title>Nasi Kebuli Babadola Jember 🍛</title>
-  <link rel="icon" type="image/png" href="537463579_18521864815002393_2786672968626679805_n-removebg-preview.png">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body{
-      background:linear-gradient(135deg,#f8e0b3,#e4c49b);
-      color:#3e2723;
-      scroll-behavior:smooth;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Nasi Kebuli Babadola Jember 🍛</title>
+    <link rel="icon" type="image/png" href="537463579_18521864815002393_2786672968626679805_n-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset dan Dasar */
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+        body{
+            background:linear-gradient(135deg,#f8e0b3,#e4c49b);
+            color:#3e2723;
+            scroll-behavior:smooth;
+        }
 
-    /* ✨ Animasi */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-    @keyframes glow{0%{box-shadow:0 0 10px rgba(255,215,0,0.3);}50%{box-shadow:0 0 25px rgba(255,215,0,0.6);}100%{box-shadow:0 0 10px rgba(255,215,0,0.3);}}
+        /* ✨ Animasi */
+        @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+        @keyframes glow{0%{box-shadow:0 0 10px rgba(255,215,0,0.3);}50%{box-shadow:0 0 25px rgba(255,215,0,0.6);}100%{box-shadow:0 0 10px rgba(255,215,0,0.3);}}
 
-    /* 🕌 Navbar */
-    nav {
-  background: linear-gradient(90deg,#4a0f00,#7b2d00,#b8860b);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 18px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
+        /* 🕌 Navbar */
+        nav {
+            background: linear-gradient(90deg,#4a0f00,#7b2d00,#b8860b);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 18px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
 
-nav .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 18px;
-  font-family: 'Amiri', serif;
-}
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+        }
 
-nav .logo img {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  background: #fff;
-  object-fit: cover;
-}
+        nav .logo img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: #fff;
+            object-fit: cover;
+        }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 22px;
-  transition: all .4s ease-in-out;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 22px;
+            transition: all .4s ease-in-out;
+        }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: .3s;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
 
-nav ul li a:hover {
-  color: #ffeb99;
-  text-shadow: 0 0 10px #fff;
-}
+        nav ul li a:hover {
+            color: #ffeb99;
+            text-shadow: 0 0 10px #fff;
+        }
 
-.hamburger {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
-  transition: .3s;
-}
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            transition: .3s;
+        }
 
-/* 📱 Mobile Version */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    z-index: 1100;
-  }
+        /* 📱 Mobile Version */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                z-index: 1100;
+            }
 
-  nav ul {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 75%;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    background: rgba(60,20,0,0.9);
-    backdrop-filter: blur(8px);
-    transition: right .4s ease-in-out;
-    box-shadow: -3px 0 10px rgba(0,0,0,0.4);
-  }
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                height: 100vh;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 25px;
+                background: rgba(60,20,0,0.9);
+                backdrop-filter: blur(8px);
+                transition: right .4s ease-in-out;
+                box-shadow: -3px 0 10px rgba(0,0,0,0.4);
+            }
 
-  nav ul.show {
-    right: 0;
-  }
+            nav ul.show {
+                right: 0;
+            }
 
-  nav ul li a {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
+            nav ul li a {
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
 
-  /* animasi icon hamburger jadi X */
-  .hamburger.active {
-    transform: rotate(90deg);
-  }
-}
+            /* animasi icon hamburger jadi X */
+            .hamburger.active {
+                transform: rotate(90deg);
+            }
+        }
 
-    /* 🌙 Hero */
-    .hero{
-      min-height:85vh;
-      background:url('gerobak.png') center/cover no-repeat;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      text-align:center;color:white;position:relative;padding:0 15px;
-      animation:fadeUp 1s ease-in-out;
-    }
-    .hero::after{
-      content:"";position:absolute;inset:0;
-      background:rgba(0,0,0,0.6);
-      backdrop-filter:blur(1px);
-    }
-    .hero>*{position:relative;z-index:2;}
-    .hero h1{
-      font-size:42px;font-weight:700;
-      font-family:'Amiri',serif;
-      background:linear-gradient(90deg,#ffd700,#ffb300);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      text-shadow:3px 3px 10px rgba(0,0,0,0.6);
-      margin-bottom:12px;
-    }
-    .hero p{font-size:16px;color:#fff8e1;max-width:520px;margin-bottom:20px;}
-    .jam-buka{
-      background:rgba(255,255,255,0.15);
-      padding:10px 20px;border-radius:25px;
-      font-weight:600;color:#ffe082;margin-bottom:18px;
-      border:1px solid rgba(255,215,0,0.4);
-    }
-    .btn{
-      display:inline-block;
-      background:linear-gradient(90deg,#b8860b,#d4af37);
-      color:white;padding:12px 28px;border-radius:40px;font-weight:600;
-      text-decoration:none;transition:.3s;
-      box-shadow:0 5px 15px rgba(0,0,0,0.4);
-      animation:glow 3s infinite alternate;
-    }
-    .btn:hover{transform:scale(1.08);}
-    .btn-group{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-    .gofood-btn{background:linear-gradient(90deg,#a40000,#8b0000);display:flex;align-items:center;gap:10px;}
-    .gofood-btn img{width:24px;height:24px;}
+        /* 🌙 Hero */
+        .hero{
+            min-height:85vh;
+            background:url('gerobak.png') center/cover no-repeat;
+            display:flex;flex-direction:column;align-items:center;justify-content:center;
+            text-align:center;color:white;position:relative;padding:0 15px;
+            animation:fadeUp 1s ease-in-out;
+        }
+        .hero::after{
+            content:"";position:absolute;inset:0;
+            background:rgba(0,0,0,0.6);
+            backdrop-filter:blur(1px);
+        }
+        .hero>*{position:relative;z-index:2;}
+        .hero h1{
+            font-size:42px;font-weight:700;
+            font-family:'Amiri',serif;
+            background:linear-gradient(90deg,#ffd700,#ffb300);
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+            text-shadow:3px 3px 10px rgba(0,0,0,0.6);
+            margin-bottom:12px;
+        }
+        .hero p{font-size:16px;color:#fff8e1;max-width:520px;margin-bottom:20px;}
+        .jam-buka{
+            background:rgba(255,255,255,0.15);
+            padding:10px 20px;border-radius:25px;
+            font-weight:600;color:#ffe082;margin-bottom:18px;
+            border:1px solid rgba(255,215,0,0.4);
+        }
+        .btn{
+            display:inline-block;
+            background:linear-gradient(90deg,#b8860b,#d4af37);
+            color:white;padding:12px 28px;border-radius:40px;font-weight:600;
+            text-decoration:none;transition:.3s;
+            box-shadow:0 5px 15px rgba(0,0,0,0.4);
+            animation:glow 3s infinite alternate;
+        }
+        .btn:hover{transform:scale(1.08);}
+        .btn-group{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+        .gofood-btn{background:linear-gradient(90deg,#a40000,#8b0000);display:flex;align-items:center;gap:10px;}
+        .gofood-btn img{width:24px;height:24px;}
 
-    /* 🍽️ Section Style */
-    section{padding:60px 20px;text-align:center;animation:fadeUp 1s ease-in-out;}
-    h2{
-      font-size:28px;
-      color:#6b2600;
-      font-family:'Amiri',serif;
-      margin-bottom:10px;
-    }
-    h2::after{
-      content:"";display:block;width:80px;height:4px;
-      background:linear-gradient(90deg,#b8860b,#ffda6b);
-      margin:10px auto 25px;border-radius:2px;
-    }
+        /* 🍽️ Section Style */
+        section{padding:60px 20px;text-align:center;animation:fadeUp 1s ease-in-out;}
+        h2{
+            font-size:28px;
+            color:#6b2600;
+            font-family:'Amiri',serif;
+            margin-bottom:10px;
+        }
+        h2::after{
+            content:"";display:block;width:80px;height:4px;
+            background:linear-gradient(90deg,#b8860b,#ffda6b);
+            margin:10px auto 25px;border-radius:2px;
+        }
 
-    /* 🍛 Menu */
-    .menu-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;justify-items:center;}
-    .menu-item{
-      background:linear-gradient(180deg,#fff7e0,#fff);
-      border-radius:15px;width:100%;max-width:210px;padding:14px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.15);
-      border:1px solid #d4af37;
-      transition:.3s;
-    }
-    .menu-item:hover{transform:translateY(-5px) scale(1.03);}
-    .menu-item img{width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px;}
-    .menu-item h3{color:#6b2600;font-size:15px;}
-    .price{font-weight:700;color:#b8860b;font-size:15px;}
-    .note{margin-top:15px;font-style:italic;color:#5a4632;font-size:13px;}
+        /* 🍛 Menu */
+        .menu-card{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;justify-items:center;}
+        .menu-item{
+            background:linear-gradient(180deg,#fff7e0,#fff);
+            border-radius:15px;width:100%;max-width:210px;padding:14px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.15);
+            border:1px solid #d4af37;
+            transition:.3s;
+        }
+        .menu-item:hover{transform:translateY(-5px) scale(1.03);}
+        .menu-item img{width:100%;height:140px;object-fit:cover;border-radius:10px;margin-bottom:8px;}
+        .menu-item h3{color:#6b2600;font-size:15px;}
+        .price{font-weight:700;color:#b8860b;font-size:15px;}
+        .note{margin-top:15px;font-style:italic;color:#5a4632;font-size:13px;}
 
-    /* 💬 Order Form */
-    .order-form{
-      background:white;padding:22px;max-width:400px;margin:0 auto;border-radius:14px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);text-align:left;
-      border:1px solid #d4af37;
-    }
-    .order-form input,.order-form select,.order-form textarea{
-      width:100%;padding:10px;margin:6px 0 12px;border:1px solid #ccc;border-radius:8px;font-size:14px;
-    }
-    .order-form button{
-      background:linear-gradient(90deg,#25D366,#1ebe5d);
-      color:white;border:none;padding:12px;border-radius:10px;width:100%;
-      font-weight:600;cursor:pointer;font-size:15px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    }
-    .order-info{font-size:12px;color:#555;margin-top:8px;text-align:center;}
+        /* 💬 Order Form */
+        #order .order-form{
+            background:white;padding:22px;max-width:400px;margin:0 auto;border-radius:14px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);text-align:left;
+            border:1px solid #d4af37;
+        }
+        .order-form input,.order-form select,.order-form textarea{
+            width:100%;padding:10px;margin:6px 0 12px;border:1px solid #ccc;border-radius:8px;font-size:14px;
+        }
+        .order-form button{
+            background:linear-gradient(90deg,#25D366,#1ebe5d);
+            color:white;border:none;padding:12px;border-radius:10px;width:100%;
+            font-weight:600;cursor:pointer;font-size:15px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        }
+        .order-info{font-size:12px;color:#555;margin-top:8px;text-align:center;}
 
-    iframe{
-      width:100%;height:300px;border:none;border-radius:14px;margin-top:22px;
-      box-shadow:0 6px 15px rgba(184,134,11,0.4);
-    }
+        /* 📍 Lokasi */
+        iframe{
+            width:100%;height:300px;border:none;border-radius:14px;margin-top:22px;
+            box-shadow:0 6px 15px rgba(184,134,11,0.4);
+        }
 
-    /* 🏺 Footer */
-    footer{
-      background:linear-gradient(90deg,#4a0f00,#7b2d00,#b8860b);
-      color:white;padding:25px 12px;text-align:center;line-height:1.7;font-size:14px;
-    }
-    footer a{color:#fff8e1;text-decoration:none;font-weight:600;}
+        /* 🏺 Footer */
+        footer{
+            background:linear-gradient(90deg,#4a0f00,#7b2d00,#b8860b);
+            color:white;padding:25px 12px;text-align:center;line-height:1.7;font-size:14px;
+        }
+        footer a{color:#fff8e1;text-decoration:none;font-weight:600;}
 
-    /* 📱 CTA Bottom */
-    .cta-bottom{display:none;}
-    @media(max-width:768px){
-      .hero h1{font-size:30px;}
-      .hero p{font-size:14px;}
-      .menu-item img{height:130px;}
-      .cta-bottom{
-        display:block;position:fixed;bottom:0;left:0;right:0;
-        background:linear-gradient(90deg,#25D366,#1ebe5d);
-        text-align:center;padding:14px;z-index:1500;
-        animation:glow 3s infinite alternate;
-      }
-      .cta-bottom a{
-        color:white;font-size:17px;font-weight:700;text-decoration:none;
-        display:flex;justify-content:center;align-items:center;gap:8px;
-      }
-      .cta-bottom a::before{content:'💬';}
-    }
-  </style>
+        /* 📱 CTA Bottom */
+        .cta-bottom{display:none;}
+        @media(max-width:768px){
+            .hero h1{font-size:30px;}
+            .hero p{font-size:14px;}
+            .menu-item img{height:130px;}
+            .cta-bottom{
+                display:block;position:fixed;bottom:0;left:0;right:0;
+                background:linear-gradient(90deg,#25D366,#1ebe5d);
+                text-align:center;padding:14px;z-index:1500;
+                animation:glow 3s infinite alternate;
+            }
+            .cta-bottom a{
+                color:white;font-size:17px;font-weight:700;text-decoration:none;
+                display:flex;justify-content:center;align-items:center;gap:8px;
+            }
+            .cta-bottom a::before{content:'💬';}
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-  <div class="logo">
-    <img src="icon.png" alt="Logo Babadola"> 
-    <span><b>Babadola</b><span style="color:#ffeb99;"></span></span>
-  </div>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">☰</div>
-  <ul id="navLinks">
-    <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
-    <li><a href="#order" onclick="toggleMenu()">Pesan</a></li>
-    <li><a href="#lokasi" onclick="toggleMenu()">Lokasi</a></li>
-    <li><a href="#kontak" onclick="toggleMenu()">Kontak</a></li>
-  </ul>
-</nav>
+    <nav>
+        <div class="logo">
+            <img src="icon.png" alt="Logo Babadola"> 
+            <span><b>BabaDola</b><span style="color:#ffeb99;"></span></span>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">☰</div>
+        <ul id="navLinks">
+            <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
+            <li><a href="#order" onclick="toggleMenu()">Pesan</a></li>
+            <li><a href="#lokasi" onclick="toggleMenu()">Lokasi</a></li>
+            <li><a href="#kontak" onclick="toggleMenu()">Kontak</a></li>
+        </ul>
+    </nav>
 
-  <section class="hero">
-    <h1>NASI GORENG KEBULI BABADOLA</h1>
-    <p>Dari rempah Timur Tengah ke dapur Nusantara 🌿 — gurihnya nagih!</p>
-    <div class="jam-buka">Buka: 17.20 - Habis</div>
-    <div class="btn-group">
-      <a href="#order" class="btn">Pesan Sekarang</a>
-      <a href="https://gofood.co.id/id/jember/restaurant/nasi-goreng-kebuli-babadola-kpri-unej-jl-sumatra-no-101a-e3eabd25-045b-4274-92e0-a01ec3a6751e" target="_blank" class="btn gofood-btn"><img src="go.png!a"> GoFood</a>
+    <section class="hero">
+        <h1>NASI GORENG KEBULI BABADOLA</h1>
+        <p>Dari rempah Timur Tengah ke dapur Nusantara 🌿 — gurihnya nagih!</p>
+        <div class="jam-buka">Buka: 17.20 - Habis</div>
+        <div class="btn-group">
+            <a href="#order" class="btn">Pesan Sekarang</a>
+            <a href="https://gofood.co.id/id/jember/restaurant/nasi-goreng-kebuli-babadola-kpri-unej-jl-sumatra-no-101a-e3eabd25-045b-4274-92e0-a01ec3a6751e" target="_blank" class="btn gofood-btn"><img src="go.png!a" alt="GoFood logo"> GoFood</a>
+        </div>
+    </section>
+
+    <section id="menu">
+        <h2>Menu Makanan & Minuman</h2>
+        <div class="menu-card">
+            <div class="menu-item">
+                <img src="15.png" alt="Nasi Kebuli Ayam Suwir + Telor">
+                <h3>Ayam Suwir + Telor</h3>
+                <p class="price">Rp 15.000</p>
+            </div>
+            <div class="menu-item">
+                <img src="151.png" alt="Nasi Kebuli Ayam Suwir + Sosis">
+                <h3>Ayam Suwir + Sosis</h3>
+                <p class="price">Rp 15.000</p>
+            </div>
+            <div class="menu-item">
+                <img src="20.png" alt="Nasi Kebuli Full Topping">
+                <h3>Full Topping</h3>
+                <p class="price">Rp 20.000</p>
+            </div>
+            <div class="menu-item">
+                <img src="30.png" alt="Nasi Kebuli Spesial Jumbo">
+                <h3>Spesial Jumbo</h3>
+                <p class="price">Rp 30.000</p>
+            </div>
+            <div class="menu-item">
+                <img src="teh.jpg" alt="Es Teh">
+                <h3>Es Teh</h3>
+                <p class="price">Rp 3.000</p>
+            </div>
+        </div>
+        <p class="note">Level Pedas: Tidak Pedas | Pedas Sedang | Pedas | Pedas Banget</p>
+    </section>
+
+    <section id="order">
+        <h2>Pesan via WhatsApp</h2>
+        <div class="order-form">
+            <label for="atasNama">Atas Nama:</label>
+            <input id="atasNama" placeholder="Nama pemesan">
+            <label for="pesanan">Pilihan Pesanan:</label>
+            <select id="pesanan">
+                <option>NasGor Ayam Suwir + Telor</option>
+                <option>Full Topping (Ayam + Telor + Sosis)</option>
+                <option>Spesial Jumbo</option>
+            </select>
+            <label for="jamAmbil">Jam Ambil:</label>
+            <input type="time" id="jamAmbil">
+            <label for="catatan">Catatan:</label>
+            <textarea id="catatan" placeholder="Contoh: tidak pedas, tambah sambal..."></textarea>
+            <button onclick="pesanWA()">💬 Kirim ke WhatsApp</button>
+            <div class="order-info">* Jika chat tidak dibalas berarti sedang ramai orderan.<br> 💡 <b>Saran:</b> pesan sebelum jam 16.00</div>
+        </div>
+    </section>
+
+    <section id="lokasi">
+        <h2>Lokasi Kami</h2>
+        <iframe src="https://www.google.com/maps?q=Jl.+Sumatra+No.105,+Tegal+Boto+Lor,+Sumbersari,+Kabupaten+Jember,+Jawa+Timur+68121&output=embed" allowfullscreen title="Lokasi Nasi Kebuli Babadola"></iframe>
+    </section>
+
+    <footer id="kontak">
+        © 2025 <b>Nasi Kebuli Babadola Jember</b><br>
+        IG: <a href="https://www.instagram.com/nasgorkebuli_babadola" target="_blank">@nasikebuli_babadola</a> |
+        TikTok: <a href="https://www.tiktok.com/@babadola_kebuli" target="_blank">@babadola_kebuli</a>
+    </footer>
+
+    <div class="cta-bottom">
+        <a href="https://wa.me/6287738826165" target="_blank">PESAN VIA WHATSAPP SEKARANG!</a>
     </div>
-  </section>
 
-  <section id="menu">
-  <h2>Menu Makanan & Minuman</h2>
-  <div class="menu-card">
-    <div class="menu-item">
-      <img src="15.png">
-      <h3>Ayam Suwir + Telor</h3>
-      <p class="price">Rp 15.000</p>
-    </div>
-    <div class="menu-item">
-      <img src="151.png">
-      <h3>Ayam Suwir + Sosis</h3>
-      <p class="price">Rp 15.000</p>
-    </div>
-    <div class="menu-item">
-      <img src="20.png">
-      <h3>Full Topping</h3>
-      <p class="price">Rp 20.000</p>
-    </div>
-    <div class="menu-item">
-      <img src="30.png">
-      <h3>Spesial Jumbo</h3>
-      <p class="price">Rp 30.000</p>
-    </div>
-    <div class="menu-item">
-      <img src="teh.jpg">
-      <h3>Es Teh</h3>
-      <p class="price">Rp 3.000</p>
-    </div>
-  </div>
-  <p class="note">Level Pedas: Tidak Pedas | Pedas Sedang | Pedas | Pedas Banget</p>
-</section>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            const hamburger = document.getElementById("hamburger");
 
+            navLinks.classList.toggle("show");
+            hamburger.classList.toggle("active");
 
-  <section id="order">
-    <h2>Pesan via WhatsApp</h2>
-    <div class="order-form">
-      <label>Atas Nama:</label>
-      <input id="atasNama" placeholder="Nama pemesan">
-      <label>Pilihan Pesanan:</label>
-      <select id="pesanan">
-        <option>NasGor Ayam Suwir + Telor</option>
-        <option>Full Topping (Ayam + Telor + Sosis)</option>
-        <option>Spesial Jumbo</option>
-      </select>
-      <label>Jam Ambil:</label>
-      <input type="time" id="jamAmbil">
-      <label>Catatan:</label>
-      <textarea id="catatan" placeholder="Contoh: tidak pedas, tambah sambal..."></textarea>
-      <button onclick="pesanWA()">💬 Kirim ke WhatsApp</button>
-      <div class="order-info">* Jika chat tidak dibalas berarti sedang ramai orderan.<br> 💡 <b>Saran:</b> pesan sebelum jam 16.00</div>
-    </div>
-  </section>
+            // ganti ikon menu
+            if (hamburger.classList.contains("active")) {
+                hamburger.innerHTML = "✕";
+            } else {
+                hamburger.innerHTML = "☰";
+            }
+        }
 
-  <section id="lokasi">
-    <h2>Lokasi Kami</h2>
-    <iframe src="https://www.google.com/maps?q=Jl.+Sumatra+No.105,+Tegal+Boto+Lor,+Sumbersari,+Kabupaten+Jember,+Jawa+Timur+68121&output=embed" allowfullscreen></iframe>
-  </section>
+        function pesanWA(){
+            const n=document.getElementById('atasNama').value.trim();
+            const p=document.getElementById('pesanan').value;
+            const j=document.getElementById('jamAmbil').value;
+            const c=document.getElementById('catatan').value.trim();
+            
+            if(!n || !j){
+                alert('Isi nama & jam ambil ya!');
+                return;
+            }
 
-  <footer id="kontak">
-    © 2025 <b>Nasi Kebuli Babadola Jember</b><br>
-    IG: <a href="https://www.instagram.com/nasgorkebuli_babadola" target="_blank">@nasikebuli_babadola</a> |
-    TikTok: <a href="https://www.tiktok.com/@babadola_kebuli" target="_blank">@babadola_kebuli</a>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-  const navLinks = document.getElementById("navLinks");
-  const hamburger = document.getElementById("hamburger");
-
-  navLinks.classList.toggle("show");
-  hamburger.classList.toggle("active");
-
-  // ganti ikon menu
-  if (hamburger.classList.contains("active")) {
-    hamburger.innerHTML = "✕";
-  } else {
-    hamburger.innerHTML = "☰";
-  }
-}
-    function pesanWA(){
-      const n=document.getElementById('atasNama').value.trim();
-      const p=document.getElementById('pesanan').value;
-      const j=document.getElementById('jamAmbil').value;
-      const c=document.getElementById('catatan').value.trim();
-      if(!n||!j){alert('Isi nama & jam ambil ya!');return;}
-      const msg=`Halo, saya ${n}.%0A🍛 Pesanan: ${p}%0A⏰ Jam Ambil: ${j}%0A📝 Catatan: ${c||'-'}`;
-      window.open(`https://wa.me/6287738826165?text=${msg}`,'_blank');
-    }
-  </script>
+            const msg = `Halo, saya ${n}.%0A🍛 Pesanan: ${p}%0A⏰ Jam Ambil: ${j}%0A📝 Catatan: ${c || '-'}`;
+            window.open(`https://wa.me/6287738826165?text=${msg}`,'_blank');
+        }
+    </script>
 </body>
 </html>
