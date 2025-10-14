@@ -33,16 +33,25 @@
     nav ul li a:hover{color:#ffeb99;text-shadow:0 0 10px #fff;}
     .hamburger{display:none;font-size:30px;cursor:pointer;}
 
-    @media(max-width:768px){
-      .hamburger{display:block;}
-      nav ul{
-        display:flex;flex-direction:column;align-items:center;
-        background:#4a0f00;position:fixed;top:0;right:-250px;width:220px;
-        height:100vh;padding-top:80px;transition:right .4s ease;
-      }
-      nav ul.show{right:0;}
-      nav ul li{margin:18px 0;}
-    }
+    /* Sembunyikan tombol Tutup di tampilan besar */
+nav ul .close-btn {
+  display: none;
+}
+
+/* Tampilkan tombol Tutup hanya di tampilan HP */
+@media (max-width: 768px) {
+  nav ul .close-btn {
+    display: inline-block;
+    color: #ffeb99;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-decoration: none;
+  }
+  nav ul .close-btn:hover {
+    color: #fff;
+  }
+}
 
     /* 🌙 Hero */
     .hero{
@@ -167,15 +176,19 @@
 <body>
 
   <nav>
-    <div class="logo"><img src="icon.png" alt="Logo Babadola"> <span>Babadola</span></div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <ul id="navLinks">
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#order">Pesan</a></li>
-      <li><a href="#lokasi">Lokasi</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </nav>
+  <div class="logo">
+    <img src="icon.png" alt="Logo Babadola"> 
+    <span>Babadola</span>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul id="navLinks">
+    <li><a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">✕ Tutup</a></li>
+    <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
+    <li><a href="#order" onclick="toggleMenu()">Pesan</a></li>
+    <li><a href="#lokasi" onclick="toggleMenu()">Lokasi</a></li>
+    <li><a href="#kontak" onclick="toggleMenu()">Kontak</a></li>
+  </ul>
+</nav>
 
   <section class="hero">
     <h1>NASI GORENG KEBULI BABADOLA</h1>
@@ -250,10 +263,6 @@
     IG: <a href="https://www.instagram.com/nasgorkebuli_babadola" target="_blank">@nasikebuli_babadola</a> |
     TikTok: <a href="https://www.tiktok.com/@babadola_kebuli" target="_blank">@babadola_kebuli</a>
   </footer>
-
-  <div class="cta-bottom">
-    <a href="https://wa.me/6287738826165?text=Halo%20Nasi%20Kebuli%20Babadola!%20Saya%20mau%20pesan%20ya%20🍛" target="_blank">Pesan Sekarang</a>
-  </div>
 
   <script>
     function toggleMenu(){document.getElementById("navLinks").classList.toggle("show");}
