@@ -27,12 +27,21 @@
     }
 
     /* UBAH: Font-Family Utama menjadi Roboto/Arial (Latin) */
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto', Arial, sans-serif;} 
-    body{
-      background:linear-gradient(135deg,#f8e0b3,#e4c49b);
-      color:#3e2723;
-      scroll-behavior:smooth;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f8e0b3, #e4c49b);
+  color: #3e2723;
+  scroll-behavior: smooth;
+}
+
 
     /* 🕌 Navbar */
     nav {
@@ -315,7 +324,6 @@
   <section class="hero">
     <p style="font-size: 18px; margin-bottom: 0;">Selamat Datang di Website</p>
     <h1><span>Nasi Goreng Kebuli Babadola</span></h1>
-    <p>Dari rempah Timur Tengah ke dapur Nusantara 🌿 — gurihnya nagih!</p>
     
     <div class="jam-buka">
         Buka Setiap Hari: 17.00 - sampai habis
@@ -352,8 +360,8 @@
       <select id="pesanan">
         <option>NasGor Kebuli Ayam Suwir + Telor</option>
         <option>NasGor Kebuli Ayam Suwir + Sosis</option>
-        <option>Full Topping (Ayam + Telor + Sosis)</option>
-        <option>Spesial Jumbo</option>
+        <option>Nasgor Full Topping (Ayam + Telor + Sosis)</option>
+        <option>Nasgor Spesial Jumbo</option>
       </select>
       <label for="jamAmbil">Jam Ambil:</label>
       <input type="time" id="jamAmbil">
@@ -368,7 +376,7 @@
     <h2>Lokasi Kami</h2>
     <iframe src="https://maps.google.com/maps?q=Jl.+Sumatra+No.105,+Tegal+Boto+Lor,+Sumbersari,+Jember&t=&z=15&ie=UTF8&iwloc=&output=embed" 
     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <p style="margin-top: 15px; font-size: 14px;">Alamat lengkap: **Jl. Sumatra No.105, Tegal Boto Lor, Sumbersari, Jember.**</p>
+    <p style="margin-top: 15px; font-size: 14px;">Alamat lengkap: Jl. Sumatra No.105, Tegal Boto Lor, Sumbersari, Jember.</p>
   </section>
 
   <footer id="kontak">
