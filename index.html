@@ -2,19 +2,37 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
+  <meta name="description" content="Jual Nasi Goreng Kebuli khas Timur Tengah di Jember. Perpaduan rempah otentik dan gurihnya nagih! Tersedia NasGor Ayam Suwir & Full Topping.">
+  <meta name="keywords" content="nasi goreng kebuli, babadola, jember, kuliner jember, nasi goreng, makanan enak jember">
+  <meta name="author" content="Babadola">
+
+  <meta property="og:title" content="Nasi Goreng Kebuli Babadola 🍛">
+  <meta property="og:description" content="Dari rempah Timur Tengah ke dapur Nusantara — gurihnya nagih!">
+  <meta property="og:image" content="https://contoh.com/logo.png">
+  <meta property="og:url" content="https://contoh.com">
+  <meta name="twitter:card" content="summary_large_image">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <title>Nasi Goreng Kebuli Babadola Jember 🍛</title>
   <link rel="icon" type="image/png" href="537463579_18521864815002393_2786672968626679805_n-removebg-preview.png">
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    /* 1. KEYFRAMES BARU UNTUK CTA & HOVER MENU */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes glow{0%{box-shadow:0 0 10px rgba(255,215,0,0.3);}50%{box-shadow:0 0 25px rgba(255,215,0,0.6);}100%{box-shadow:0 0 10px rgba(255,215,0,0.3);}}
+    @keyframes pulseCta {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.03); opacity: 0.9; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* UBAH: Font-Family Utama menjadi Roboto/Arial (Latin) */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto', Arial, sans-serif;} 
     body{
       background:linear-gradient(135deg,#f8e0b3,#e4c49b);
       color:#3e2723;
       scroll-behavior:smooth;
     }
-    @keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-    @keyframes glow{0%{box-shadow:0 0 10px rgba(255,215,0,0.3);}50%{box-shadow:0 0 25px rgba(255,215,0,0.6);}100%{box-shadow:0 0 10px rgba(255,215,0,0.3);}}
 
     /* 🕌 Navbar */
     nav {
@@ -35,7 +53,8 @@
       gap: 10px;
       font-weight: 700;
       font-size: 18px;
-      font-family: 'Amiri', serif;
+      /* UBAH: Font untuk Logo menjadi Georgia/Times New Roman (Latin Serif) */
+      font-family: 'Georgia', 'Times New Roman', serif;
     }
     nav .logo img {
       height: 40px;
@@ -90,10 +109,10 @@
       nav ul li a {font-size: 20px;}
     }
 
-    /* 🌙 Hero */
+    /* 🌙 Hero - Parallax Effect */
     .hero {
       min-height: 90vh;
-      background: url('gerobak.png') center/cover no-repeat;
+      background: url('gerobak.png') center/cover no-repeat fixed; /* Tambah 'fixed' untuk Parallax */
       display: flex;flex-direction: column;align-items: center;justify-content: center;
       text-align: center;color: white;position: relative;padding: 0 15px;
       animation: fadeUp 1s ease-in-out;
@@ -104,7 +123,9 @@
     }
     .hero>*{position: relative;z-index: 2;}
     .hero h1 {
-      font-size: 40px;font-family:'Amiri',serif;
+      font-size: 40px;
+      /* UBAH: Font untuk Heading Hero menjadi Georgia/Times New Roman (Latin Serif) */
+      font-family:'Georgia', 'Times New Roman', serif;
       background: linear-gradient(90deg,#ffd700,#ffb300);
       -webkit-background-clip: text;-webkit-text-fill-color: transparent;
       text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
@@ -117,15 +138,21 @@
       margin-bottom: 25px;
       line-height: 1.6;
     }
+    /* Jam Buka */
     .jam-buka {
-      background: rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.4); 
       padding: 10px 20px;
       border-radius: 30px;
       font-weight: 600;
       color: #ffe082;
-      border: 1px solid rgba(255,215,0,0.4);
+      border: 1px solid rgba(255,215,0,0.8); 
       margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
+    
     .btn {
       display: inline-block;
       background: linear-gradient(90deg,#b8860b,#d4af37);
@@ -151,7 +178,8 @@
     h2 {
       font-size: 28px;
       color: #6b2600;
-      font-family: 'Amiri',serif;
+      /* UBAH: Font untuk Heading Section menjadi Georgia/Times New Roman (Latin Serif) */
+      font-family: 'Georgia', 'Times New Roman', serif;
       margin-bottom: 10px;
     }
     h2::after {
@@ -160,7 +188,7 @@
       margin: 10px auto 25px;border-radius: 2px;
     }
 
-    /* 🍛 Menu */
+    /* 🍛 Menu - Efek Hover Baru */
     .menu-card {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
@@ -175,17 +203,22 @@
       padding: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       border: 1px solid #d4af37;
-      transition: .3s;
+      transition: all .3s ease; /* Transisi untuk semua properti */
     }
-    .menu-item:hover {transform: translateY(-5px) scale(1.03);}
+    .menu-item:hover {
+        transform: translateY(-5px) scale(1.05); /* Skala lebih besar */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 15px #b8860b; /* Bayangan lebih dalam + glow */
+        background: #fffcf0; /* Warna lebih cerah saat di-hover */
+    }
     .menu-item img {
       width: 100%;height: 140px;object-fit: cover;
       border-radius: 10px;margin-bottom: 10px;
     }
-    .menu-item h3 {color: #6b2600;font-size: 15px;}
+    .menu-item h3 {color: #6b2600;font-size: 15px; transition: color .3s;}
+    .menu-item:hover h3 {color: #d4af37;} /* Ubah warna teks saat hover */
     .price {font-weight: 700;color: #b8860b;font-size: 15px;}
     .note {margin-top: 15px;font-style: italic;color: #5a4632;font-size: 13px;}
-
+    
     /* 💬 Order */
     #order .order-form {
       background: white;
@@ -204,6 +237,11 @@
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 14px;
+      transition: border-color .3s;
+    }
+    .order-form input:focus, .order-form select:focus, .order-form textarea:focus {
+        border-color: #d4af37; /* Border menonjol saat fokus */
+        outline: none;
     }
     .order-form button {
       background: linear-gradient(90deg,#25D366,#1ebe5d);
@@ -236,7 +274,7 @@
     }
     footer a {color:#fff8e1;text-decoration:none;font-weight:600;}
 
-    /* 📱 CTA Bottom */
+    /* 📱 CTA Bottom - Tambah Animasi Pulse */
     .cta-bottom {display:none;}
     @media(max-width:768px){
       .hero h1{font-size:28px;}
@@ -246,7 +284,9 @@
         display:block;position:fixed;bottom:0;left:0;right:0;
         background:linear-gradient(90deg,#25D366,#1ebe5d);
         text-align:center;padding:14px;z-index:1500;
-        animation:glow 3s infinite alternate;
+        animation: pulseCta 2s infinite alternate; /* Animasi baru */
+        padding-bottom: env(safe-area-inset-bottom);
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
       }
       .cta-bottom a{
         color:white;font-size:17px;font-weight:700;text-decoration:none;
@@ -260,7 +300,7 @@
 
   <nav>
     <div class="logo">
-      <img src="icon.png" alt="Logo Babadola">
+      <img src="icon.png" alt="Logo Babadola, masakan Arab dan Nusantara">
       <span><b>BabaDola</b></span>
     </div>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">☰</div>
@@ -273,11 +313,19 @@
   </nav>
 
   <section class="hero">
-    <h1>Selamat Datang di Website<br><span>Nasi Goreng Kebuli Babadola</span></h1>
+    <p style="font-size: 18px; margin-bottom: 0;">Selamat Datang di Website</p>
+    <h1><span>Nasi Goreng Kebuli Babadola</span></h1>
     <p>Dari rempah Timur Tengah ke dapur Nusantara 🌿 — gurihnya nagih!</p>
+    
+    <div class="jam-buka">
+        Buka Setiap Hari: 17.00 - sampai habis
+    </div>
+
     <div class="btn-group">
       <a href="#order" class="btn">Pesan Sekarang</a>
-      <a href="https://gofood.co.id/id/jember/restaurant/nasi-goreng-kebuli-babadola-kpri-unej-jl-sumatra-no-101a-e3eabd25-045b-4274-92e0-a01ec3a6751e" target="_blank" class="btn gofood-btn"><img src="go.png!a" alt="GoFood logo"> GoFood</a>
+      <a href="https://gofood.co.id/id/jember/restaurant/nasi-goreng-kebuli-babadola-kpri-unej-jl-sumatra-no-101a-e3eabd25-045b-4274-92e0-a01ec3a6751e" target="_blank" rel="noopener noreferrer" class="btn gofood-btn">
+        <img src="go.png!a" alt="GoFood logo"> GoFood
+      </a>
     </div>
   </section>
   
@@ -285,11 +333,11 @@
   <section id="menu">
     <h2>Menu Makanan & Minuman</h2>
     <div class="menu-card">
-      <div class="menu-item"><img src="15.png"><h3>Nasi Goreng Kebuli Ayam Suwir + Telor</h3><p class="price">Rp 15.000</p></div>
-      <div class="menu-item"><img src="151.png"><h3>Nasi Goreng Kebuli Ayam Suwir + Sosis</h3><p class="price">Rp 15.000</p></div>
-      <div class="menu-item"><img src="20.png"><h3>Nasi Goreng Kebuli Full Topping</h3><p class="price">Rp 20.000</p></div>
-      <div class="menu-item"><img src="30.png"><h3>Nasi Goreng Kebuli Spesial Jumbo</h3><p class="price">Rp 30.000</p></div>
-      <div class="menu-item"><img src="teh.jpg"><h3>Es Teh</h3><p class="price">Rp 3.000</p></div>
+      <div class="menu-item"><img src="15.png" alt="Nasi Goreng Kebuli dengan Ayam Suwir dan Telor"><h3 title="Nasi Goreng Kebuli Ayam Suwir + Telor">Nasi Goreng Kebuli Ayam Suwir + Telor</h3><p class="price">Rp 15.000</p></div>
+      <div class="menu-item"><img src="151.png" alt="Nasi Goreng Kebuli dengan Ayam Suwir dan Sosis"><h3 title="Nasi Goreng Kebuli Ayam Suwir + Sosis">Nasi Goreng Kebuli Ayam Suwir + Sosis</h3><p class="price">Rp 15.000</p></div>
+      <div class="menu-item"><img src="20.png" alt="Nasi Goreng Kebuli dengan topping lengkap: Ayam Suwir, Telor, dan Sosis"><h3 title="Nasi Goreng Kebuli Full Topping">Nasi Goreng Kebuli Full Topping</h3><p class="price">Rp 20.000</p></div>
+      <div class="menu-item"><img src="30.png" alt="Nasi Goreng Kebuli porsi besar Spesial Jumbo"><h3 title="Nasi Goreng Kebuli Spesial Jumbo">Nasi Goreng Kebuli Spesial Jumbo</h3><p class="price">Rp 30.000</p></div>
+      <div class="menu-item"><img src="teh.jpg" alt="Segelas Es Teh Dingin"><h3 title="Es Teh">Es Teh</h3><p class="price">Rp 3.000</p></div>
     </div>
     <p class="note">Level Pedas: Tidak Pedas | Pedas Sedang | Pedas</p>
   </section>
@@ -318,14 +366,16 @@
 
   <section id="lokasi">
     <h2>Lokasi Kami</h2>
-    <iframe src="https://www.google.com/maps?q=Jl.+Sumatra+No.105,+Tegal+Boto+Lor,+Sumbersari,+Kabupaten+Jember,+Jawa+Timur+68121&output=embed" allowfullscreen></iframe>
+    <iframe src="https://maps.google.com/maps?q=Jl.+Sumatra+No.105,+Tegal+Boto+Lor,+Sumbersari,+Jember&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p style="margin-top: 15px; font-size: 14px;">Alamat lengkap: **Jl. Sumatra No.105, Tegal Boto Lor, Sumbersari, Jember.**</p>
   </section>
 
   <footer id="kontak">
-    © 2025 <b>Nasi Kebuli Babadola Jember</b><br>
-    IG: <a href="https://www.instagram.com/nasgorkebuli_babadola" target="_blank">@nasikebuli_babadola</a> |
-    TikTok: <a href="https://www.tiktok.com/@babadola_kebuli" target="_blank">@babadola_kebuli</a>
-  </footer>
+  © <span id="tahun"></span> <b>Nasi Kebuli Babadola Jember</b><br>
+  IG: <a href="https://www.instagram.com/nasgorkebuli_babadola" target="_blank" rel="noopener noreferrer">@nasikebuli_babadola</a> |
+  TikTok: <a href="https://www.tiktok.com/@babadola04" target="_blank" rel="noopener noreferrer">@babadola04</a>
+</footer>
 
   <script>
     function toggleMenu() {
@@ -343,9 +393,11 @@
       const c=document.getElementById('catatan').value.trim();
       if(!n || !j){alert('Isi nama & jam ambil ya!');return;}
       const msg=`Halo, saya ${n}.%0A🍛 Pesanan: ${p}%0A⏰ Jam Ambil: ${j}%0A📝 Catatan: ${c || '-'}`;
-      window.open(`https://wa.me/6287738826165?text=${msg}`,'_blank');
+      window.open(`https://wa.me/6287738826165?text=${msg}`,'_blank', 'noopener noreferrer'); 
     }
+    
+    // Tetapkan tahun footer
+    document.getElementById('tahun').innerText = new Date().getFullYear();
   </script>
 </body>
 </html>
-
